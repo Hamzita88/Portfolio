@@ -15,7 +15,7 @@ const translations = {
         // Home Page
         home: {
             title: 'Hamza Laouzi',
-            subtitle: '💼 Del Mundo Empresarial al Desarrollo Web',
+            subtitle: "💼 Del Mundo Ventas al Desarrollo Web",
             description: 'Soy un desarrollador web con un historial sólido en ventas B2B y atención al cliente. Utilizo mi experiencia entendiendo las necesidades del usuario para construir software que no solo funciona, sino que resuelve problemas reales.',
             cta_projects: 'Ver Proyectos',
             cta_contact: 'Contactar',
@@ -85,7 +85,7 @@ const translations = {
         // Home Page
         home: {
             title: 'Hamza Laouzi',
-            subtitle: '💼 From Business World to Web Development',
+            subtitle: '💼 From Sales to Web Development',
             description: 'I am a web developer with a solid background in B2B sales and customer service. I use my experience understanding user needs to build software that not only works, but solves real problems.',
             cta_projects: 'View Projects',
             cta_contact: 'Get in Touch',
@@ -155,7 +155,7 @@ const translations = {
         // Home Page
         home: {
             title: 'Hamza Laouzi',
-            subtitle: '💼 Du Monde des Affaires au Développement Web',
+            subtitle: '💼 Du Monde des Ventes au Développement Web',
             description: 'Je suis un développeur web avec une solide expérience en ventes B2B et service client. J\'utilise mon expérience pour comprendre les besoins des utilisateurs et créer des logiciels qui non seulement fonctionnent, mais résolvent de vrais problèmes.',
             cta_projects: 'Voir les Projets',
             cta_contact: 'Me Contacter',
