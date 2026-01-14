@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Mensaje enviado con éxito - Hamza Laouzi te responderá pronto.">
+    <meta name="author" content="Hamza Laouzi">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Mensaje Enviado - Hamza Laouzi | Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .success-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-2xl);
+        }
+
+        .success-icon {
+            font-size: 6rem;
+            margin-bottom: var(--spacing-lg);
+            animation: scaleIn 0.5s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .success-text {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+        }
+
+        .success-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HamzaDev</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="projects.html" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+                <button class="lang-selector" aria-label="Cambiar idioma">🇪🇸 ES</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Success Section -->
+        <section class="success-container fade-in">
+            <div class="success-icon">✅</div>
+            <h1 class="success-title">¡Mensaje Enviado con Éxito!</h1>
+            <p class="text-secondary success-text">
+                Gracias por contactarme. He recibido tu mensaje y te responderé lo antes posible,
+                generalmente en menos de 24 horas.
+            </p>
+            <p class="text-secondary success-text">
+                Mientras tanto, puedes explorar más sobre mi trabajo y experiencia.
+            </p>
+
+            <div class="success-buttons">
+                <a href="index.html" class="btn btn-primary">
+                    🏠 Volver al Inicio
+                </a>
+                <a href="about.html" class="btn btn-secondary">
+                    👤 Conocer más sobre mí
+                </a>
+                <a href="projects.html" class="btn btn-secondary">
+                    🚀 Ver Proyectos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="mailto:hamzita88@gmail.com" class="social-link">
+                📧 <span data-i18n="contact.email_me">Email</span>
+            </a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
+                class="social-link">
+                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
+            </a>
+        </div>
+
+        <p class="text-secondary">
+            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
+        </p>
+        <p class="text-secondary">
+            <span data-i18n="footer.made_with">Hecho con</span> ❤️
+            <span data-i18n="footer.by">por</span> Hamza Laouzi
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations/translations.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>
