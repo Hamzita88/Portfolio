@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Proyectos de Hamza Laouzi - Desarrollador Web Full Stack. Explora soluciones digitales que resuelven problemas reales de negocio. Próximamente casos de éxito y demos en vivo.">
+    <meta name="keywords"
+        content="proyectos hamza laouzi, portfolio proyectos, desarrollador web proyectos, casos de éxito, demos">
+    <meta name="author" content="Hamza Laouzi">
+    <link rel="canonical" href="https://hamzalaouzi.netlify.app/projects.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hamzalaouzi.netlify.app/projects.html">
+    <meta property="og:title" content="Proyectos - Hamza Laouzi | Soluciones Digitales que Resuelven Problemas">
+    <meta property="og:description"
+        content="Explora proyectos web que combinan experiencia técnica con visión de negocio.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Proyectos - Hamza Laouzi">
+
+    <title>Proyectos - Hamza Laouzi | Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .coming-soon-container {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-2xl);
+        }
+
+        .coming-soon-icon {
+            font-size: 6rem;
+            margin-bottom: var(--spacing-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .coming-soon-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coming-soon-text {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* Project card template (hidden, for future use) */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--accent-primary);
+            color: white;
+            border-radius: var(--radius-sm);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HamzaDev</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="projects.html" class="active" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+                <button class="lang-selector" aria-label="Cambiar idioma">🇪🇸 ES</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title" data-i18n="projects.title">Proyectos</h1>
+            <p class="hero-subtitle text-secondary" data-i18n="projects.subtitle">
+                Mis trabajos y desarrollos
+            </p>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section class="coming-soon-container fade-in">
+            <div class="coming-soon-icon">🚀</div>
+            <h2 class="coming-soon-title" data-i18n="projects.coming_soon">Próximamente</h2>
+            <p class="text-secondary coming-soon-text" data-i18n="projects.coming_soon_text">
+                Estoy trabajando en proyectos increíbles. ¡Vuelve pronto para verlos!
+            </p>
+            <a href="contact.html" class="btn btn-primary" data-i18n="home.cta_contact">Contactar</a>
+        </section>
+
+        <!-- 
+    ============================================
+    TEMPLATE FOR FUTURE PROJECTS
+    ============================================
+    Uncomment and duplicate this section when adding projects:
+    
+    <section class="scroll-animate">
+      <div class="bento-grid">
+        
+        <div class="card project-card">
+          <img src="assets/images/project1.jpg" alt="Project Name">
+          <h3 class="card-title">Project Name</h3>
+          <p class="text-secondary">Brief description of the project and what it does.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <div class="mt-2">
+            <a href="#" class="btn btn-primary btn-sm">Ver Proyecto</a>
+            <a href="#" class="btn btn-secondary btn-sm">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="mailto:hamza@example.com" class="social-link">
+                📧 <span data-i18n="contact.email_me">Email</span>
+            </a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
+                class="social-link">
+                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
+            </a>
+        </div>
+
+        <p class="text-secondary">
+            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
+        </p>
+        <p class="text-secondary">
+            <span data-i18n="footer.made_with">Hecho con</span> ❤️
+            <span data-i18n="footer.by">por</span> Hamza Laouzi
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations/translations.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Contacta con Hamza Laouzi - Desarrollador Web Full Stack. Hablemos de tu próximo proyecto. Disponible para freelance y prácticas profesionales. Respuesta rápida garantizada.">
+    <meta name="keywords"
+        content="contacto hamza laouzi, desarrollador web contacto, freelance, prácticas, colaboración">
+    <meta name="author" content="Hamza Laouzi">
+    <link rel="canonical" href="https://hamzalaouzi.netlify.app/contact.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hamzalaouzi.netlify.app/contact.html">
+    <meta property="og:title" content="Contacto - Hamza Laouzi | Hablemos de tu Proyecto">
+    <meta property="og:description"
+        content="Desarrollador web disponible para proyectos freelance. Transformo ideas en soluciones digitales.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contacto - Hamza Laouzi">
+
+    <title>Contacto - Hamza Laouzi | Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
+        .contact-form-container {
+            max-width: 600px;
+        }
+
+        .contact-info-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        [data-theme="dark"] .contact-method {
+            background-color: var(--bg-dark-secondary);
+            color: var(--text-dark);
+        }
+
+        [data-theme="light"] .contact-method {
+            background-color: var(--bg-light-secondary);
+            color: var(--text-light);
+        }
+
+        .contact-method:hover {
+            transform: translateX(10px);
+            background-color: var(--accent-primary);
+            color: white;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details p {
+            margin: 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .form-success {
+            display: none;
+            padding: var(--spacing-md);
+            background-color: #10B981;
+            color: white;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">HamzaDev</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="about.html" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="projects.html" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="contact.html" class="active" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Cambiar tema">🌙</button>
+                <button class="lang-selector" aria-label="Cambiar idioma">🇪🇸 ES</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title" data-i18n="contact.title">Contacto</h1>
+            <p class="hero-subtitle text-secondary" data-i18n="contact.subtitle">
+                Hablemos de tu próximo proyecto
+            </p>
+        </section>
+
+        <!-- Contact Content -->
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-container scroll-animate">
+                <div class="card">
+                    <h2 class="card-title" data-i18n="contact.form_title">Envíame un mensaje</h2>
+
+                    <div class="form-success" id="formSuccess">
+                        ¡Mensaje enviado con éxito! Te responderé pronto.
+                    </div>
+
+                    <!-- Netlify Form -->
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+                        action="/contact.html?success=true">
+                        <!-- Hidden fields for Netlify -->
+                        <input type="hidden" name="form-name" value="contact">
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
+
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name" class="form-label" data-i18n="contact.name_label">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                data-i18n-placeholder="contact.name_placeholder" placeholder="Tu nombre" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email" class="form-label" data-i18n="contact.email_label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                data-i18n-placeholder="contact.email_placeholder" placeholder="tu@email.com" required>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="form-group">
+                            <label for="message" class="form-label" data-i18n="contact.message_label">Mensaje</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                data-i18n-placeholder="contact.message_placeholder"
+                                placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span data-i18n="contact.submit">Enviar Mensaje</span> 📨
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="scroll-animate">
+                <div class="card">
+                    <h2 class="card-title" data-i18n="contact.or">O contáctame directamente</h2>
+
+                    <div class="contact-info-card">
+                        <!-- Email -->
+                        <a href="mailto:hamzita88@gmail.com" class="contact-method">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.email_me">Email</h4>
+                                <p>hamzita88@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
+                            class="contact-method">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h4 data-i18n="contact.linkedin">LinkedIn</h4>
+                                <p>linkedin.com/in/hamza-laouzi</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="mt-3">
+                        <p class="text-secondary text-center">
+                            💡 Disponible para proyectos freelance y prácticas profesionales
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="mailto:hamza@example.com" class="social-link">
+                📧 <span data-i18n="contact.email_me">Email</span>
+            </a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
+                class="social-link">
+                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
+            </a>
+        </div>
+
+        <p class="text-secondary">
+            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
+        </p>
+        <p class="text-secondary">
+            <span data-i18n="footer.made_with">Hecho con</span> ❤️
+            <span data-i18n="footer.by">por</span> Hamza Laouzi
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations/translations.js"></script>
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- Form Success Handler -->
+    <script>
+        // Show success message if form was submitted
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            document.getElementById('formSuccess').style.display = 'block';
+            // Scroll to success message
+            document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+
+</html>
