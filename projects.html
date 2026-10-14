@@ -7,7 +7,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Proyectos de Hamza Laouzi - Desarrollador Web Full Stack. Explora soluciones digitales que resuelven problemas reales de negocio. Próximamente casos de éxito y demos en vivo.">
+        content="Proyectos de Hamza Laouzi. Explora Polaris Insights, un dashboard de marketing con KPIs, canales y campañas. Aplicación con acceso restringido y enlace al repositorio.">
     <meta name="keywords"
         content="proyectos hamza laouzi, portfolio proyectos, desarrollador web proyectos, casos de éxito, demos">
     <meta name="author" content="Hamza Laouzi">
@@ -27,7 +27,7 @@
     <title>Proyectos - Hamza Laouzi | Portfolio</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=173bc6d9e15e">
 
     <style>
         .coming-soon-container {
@@ -73,19 +73,40 @@
             margin-bottom: var(--spacing-xl);
         }
 
-        /* Project card template (hidden, for future use) */
+        /* Project overview */
         .project-card {
             position: relative;
             overflow: hidden;
-            cursor: pointer;
+            width: 100%;
+            max-width: 900px;
+            margin-inline: auto;
         }
 
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .project-preview {
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-secondary));
+            color: var(--text-dark);
             border-radius: var(--radius-md);
-            margin-bottom: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--accent-secondary);
+        }
+
+        .project-preview strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            letter-spacing: 0.08em;
+        }
+
+        .project-details {
+            padding-inline-start: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
         }
 
         .project-tags {
@@ -140,18 +161,27 @@
             <div class="bento-grid">
                 
                 <div class="card project-card">
-                    <img src="/assets/images/polaris-dashboard.png" alt="Polaris Insights - Marketing Dashboard">
+                    <div class="project-preview">
+                        <strong>POLARIS</strong>
+                        <span data-i18n="projects.polaris_preview">Dashboard de marketing</span>
+                    </div>
                     <h3 class="card-title">Polaris Insights</h3>
-                    <p class="text-secondary">Dashboard de marketing con análisis de KPIs, canales y campañas. Construido con disciplina y buenas prácticas.</p>
+                    <p class="text-secondary" data-i18n="projects.polaris_description">Dashboard de marketing que reúne indicadores, canales y campañas para explorar el rendimiento desde una misma interfaz.</p>
+                    <ul class="project-details text-secondary">
+                        <li data-i18n="projects.polaris_kpis">KPIs: visión general de los indicadores de marketing.</li>
+                        <li data-i18n="projects.polaris_channels">Canales: análisis del rendimiento por canal.</li>
+                        <li data-i18n="projects.polaris_campaigns">Campañas: seguimiento de las acciones de marketing.</li>
+                    </ul>
                     <div class="project-tags">
                         <span class="project-tag">Next.js 16</span>
                         <span class="project-tag">React 19</span>
                         <span class="project-tag">Supabase</span>
                         <span class="project-tag">Tailwind CSS</span>
                     </div>
-                    <div class="mt-2">
-                        <a href="https://polaris-insights.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Ver Proyecto</a>
-                        <a href="https://github.com/Hamzita88/Polaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
+                    <p class="text-secondary mt-2" data-i18n="projects.polaris_access">Acceso restringido: la aplicación requiere una cuenta con invitación. El enlace abre la pantalla de acceso, no una demo pública.</p>
+                    <div class="project-actions mt-2">
+                        <a href="https://polaris-insights.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="projects.polaris_demo">Abrir aplicación (acceso restringido)</a>
+                        <a href="https://github.com/Hamzita88/Polaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-i18n="projects.polaris_source">Ver repositorio</a>
                     </div>
                 </div>
 
@@ -209,7 +239,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="translations/translations.js"></script>
+    <script src="translations/translations.js?v=3eb5e25e9a0d"></script>
     <script src="js/theme-toggle.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>

@@ -249,6 +249,13 @@ p {
     color: var(--accent-primary);
 }
 
+.nav-bar a:focus-visible,
+.nav-bar button:focus-visible {
+    outline: 3px solid var(--accent-secondary);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm);
+}
+
 /* ============================================
    CONTROLS (Theme Toggle & Language Selector)
    ============================================ */
@@ -707,9 +714,32 @@ p {
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 768px) {
+    .nav-bar {
+        position: sticky;
+    }
+
+    .nav-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing-xs);
+    }
+
     .nav-links {
-        display: none;
-        /* Mobile menu would go here */
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column: 1 / -1;
+        order: 3;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.25rem;
+        overflow-wrap: anywhere;
     }
 
     .bento-grid {
@@ -762,11 +792,15 @@ p {
 
     .container {
         padding: var(--spacing-sm);
-        padding-top: calc(60px + var(--spacing-lg));
+        padding-top: var(--spacing-lg);
     }
 }
 
 @media (max-width: 480px) {
+    .nav-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .nav-bar {
         padding: var(--spacing-xs) var(--spacing-sm);
     }
