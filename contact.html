@@ -27,7 +27,7 @@
     <title>Contacto - Hamza Laouzi | Portfolio</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=173bc6d9e15e">
+    <link rel="stylesheet" href="css/styles.css?v=75677e758f7c">
 
     <style>
         .contact-grid {
@@ -101,7 +101,20 @@
 
         @media (max-width: 768px) {
             .contact-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .contact-grid > div,
+            .contact-details {
+                min-width: 0;
+            }
+
+            .contact-details {
+                overflow-wrap: anywhere;
+            }
+
+            .contact-method:hover {
+                transform: none;
             }
         }
     </style>
@@ -226,27 +239,16 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <p class="text-secondary">© 2026 Hamza Laouzi</p>
         <div class="social-links">
-            <a href="mailto:hamzita88@gmail.com" class="social-link">
-                📧 <span data-i18n="contact.email_me">Email</span>
-            </a>
-            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
-                class="social-link">
-                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
-            </a>
+            <a href="https://github.com/Hamzita88" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+            <a href="mailto:hamzita88@gmail.com" class="social-link" data-i18n="footer.email">Email</a>
         </div>
-
-        <p class="text-secondary">
-            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
-        </p>
-        <p class="text-secondary">
-            <span data-i18n="footer.made_with">Hecho con</span> ❤️
-            <span data-i18n="footer.by">por</span> Hamza Laouzi
-        </p>
     </footer>
 
     <!-- Scripts -->
-    <script src="translations/translations.js?v=3eb5e25e9a0d"></script>
+    <script src="translations/translations.js?v=f71a52462845"></script>
     <script src="js/theme-toggle.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>

@@ -27,103 +27,8 @@
     <title>Proyectos - Hamza Laouzi | Portfolio</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=173bc6d9e15e">
+    <link rel="stylesheet" href="css/styles.css?v=75677e758f7c">
 
-    <style>
-        .coming-soon-container {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: var(--spacing-2xl);
-        }
-
-        .coming-soon-icon {
-            font-size: 6rem;
-            margin-bottom: var(--spacing-lg);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .coming-soon-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: var(--spacing-md);
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .coming-soon-text {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        /* Project overview */
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 900px;
-            margin-inline: auto;
-        }
-
-        .project-preview {
-            padding: var(--spacing-lg);
-            background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-secondary));
-            color: var(--text-dark);
-            border-radius: var(--radius-md);
-            margin-bottom: var(--spacing-md);
-            border: 1px solid var(--accent-secondary);
-        }
-
-        .project-preview strong {
-            display: block;
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            letter-spacing: 0.08em;
-        }
-
-        .project-details {
-            padding-inline-start: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .project-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-xs);
-            margin-top: var(--spacing-sm);
-        }
-
-        .project-tag {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-            background-color: var(--accent-primary);
-            color: white;
-            border-radius: var(--radius-sm);
-        }
-    </style>
 </head>
 
 <body>
@@ -146,100 +51,58 @@
         </div>
     </nav>
 
-    <!-- Main Container -->
     <main class="container">
-        <!-- Hero Section -->
         <section class="hero">
             <h1 class="hero-title" data-i18n="projects.title">Proyectos</h1>
-            <p class="hero-subtitle text-secondary" data-i18n="projects.subtitle">
-                Mis trabajos y desarrollos
-            </p>
+            <p class="hero-subtitle text-secondary" data-i18n="projects.subtitle">Mis trabajos y desarrollos</p>
         </section>
 
-        <!-- Projects Section -->
-        <section class="scroll-animate">
-            <div class="bento-grid">
-                
-                <div class="card project-card">
-                    <div class="project-preview">
-                        <strong>POLARIS</strong>
-                        <span data-i18n="projects.polaris_preview">Dashboard de marketing</span>
-                    </div>
-                    <h3 class="card-title">Polaris Insights</h3>
-                    <p class="text-secondary" data-i18n="projects.polaris_description">Dashboard de marketing que reúne indicadores, canales y campañas para explorar el rendimiento desde una misma interfaz.</p>
-                    <ul class="project-details text-secondary">
+        <section class="featured-project" aria-labelledby="polaris-title">
+            <div class="project-preview">
+                <p class="section-label" data-i18n="home.featured">Proyecto destacado / Aplicación web</p>
+                <strong>Polaris Insights.</strong>
+                <p data-i18n="projects.polaris_preview">Dashboard de marketing</p>
+                <span class="project-cover-stack">Next.js · React · Supabase</span>
+            </div>
+            <div class="project-overview">
+                <p class="section-label" data-i18n="projects.overview_title">Sobre el proyecto</p>
+                <h2 id="polaris-title">Polaris Insights</h2>
+                <p class="text-secondary" data-i18n="projects.polaris_description">Dashboard de marketing que reúne indicadores, canales y campañas para explorar el rendimiento desde una misma interfaz.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Next.js 16</span>
+                    <span class="project-tag">React 19</span>
+                    <span class="project-tag">Supabase</span>
+                    <span class="project-tag">Tailwind CSS</span>
+                </div>
+                <details class="project-details">
+                    <summary data-i18n="projects.details_title">Qué incluye</summary>
+                    <ul class="project-features text-secondary">
                         <li data-i18n="projects.polaris_kpis">KPIs: visión general de los indicadores de marketing.</li>
                         <li data-i18n="projects.polaris_channels">Canales: análisis del rendimiento por canal.</li>
                         <li data-i18n="projects.polaris_campaigns">Campañas: seguimiento de las acciones de marketing.</li>
                     </ul>
-                    <div class="project-tags">
-                        <span class="project-tag">Next.js 16</span>
-                        <span class="project-tag">React 19</span>
-                        <span class="project-tag">Supabase</span>
-                        <span class="project-tag">Tailwind CSS</span>
-                    </div>
-                    <p class="text-secondary mt-2" data-i18n="projects.polaris_access">Acceso restringido: la aplicación requiere una cuenta con invitación. El enlace abre la pantalla de acceso, no una demo pública.</p>
-                    <div class="project-actions mt-2">
-                        <a href="https://polaris-insights.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="projects.polaris_demo">Abrir aplicación (acceso restringido)</a>
-                        <a href="https://github.com/Hamzita88/Polaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-i18n="projects.polaris_source">Ver repositorio</a>
-                    </div>
+                </details>
+                <p class="project-access text-secondary" data-i18n="projects.polaris_access">Acceso restringido: la aplicación requiere una cuenta por invitación. No es una demo pública.</p>
+                <div class="project-actions">
+                    <a href="https://polaris-insights.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="projects.polaris_demo">Abrir aplicación (acceso restringido)</a>
+                    <a href="https://github.com/Hamzita88/Polaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="projects.polaris_source">Ver repositorio</a>
                 </div>
-
             </div>
         </section>
-
-        <!-- 
-    ============================================
-    TEMPLATE FOR FUTURE PROJECTS
-    ============================================
-    Uncomment and duplicate this section when adding projects:
-    
-    <section class="scroll-animate">
-      <div class="bento-grid">
-        
-        <div class="card project-card">
-          <img src="assets/images/project1.jpg" alt="Project Name">
-          <h3 class="card-title">Project Name</h3>
-          <p class="text-secondary">Brief description of the project and what it does.</p>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">JavaScript</span>
-          </div>
-          <div class="mt-2">
-            <a href="#" class="btn btn-primary btn-sm">Ver Proyecto</a>
-            <a href="#" class="btn btn-secondary btn-sm">GitHub</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    -->
     </main>
 
     <!-- Footer -->
     <footer class="footer">
+        <p class="text-secondary">© 2026 Hamza Laouzi</p>
         <div class="social-links">
-            <a href="mailto:hamzita88@gmail.com" class="social-link">
-                📧 <span data-i18n="contact.email_me">Email</span>
-            </a>
-            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
-                class="social-link">
-                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
-            </a>
+            <a href="https://github.com/Hamzita88" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+            <a href="mailto:hamzita88@gmail.com" class="social-link" data-i18n="footer.email">Email</a>
         </div>
-
-        <p class="text-secondary">
-            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
-        </p>
-        <p class="text-secondary">
-            <span data-i18n="footer.made_with">Hecho con</span> ❤️
-            <span data-i18n="footer.by">por</span> Hamza Laouzi
-        </p>
     </footer>
 
     <!-- Scripts -->
-    <script src="translations/translations.js?v=3eb5e25e9a0d"></script>
+    <script src="translations/translations.js?v=f71a52462845"></script>
     <script src="js/theme-toggle.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>

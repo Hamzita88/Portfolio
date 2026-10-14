@@ -15,6 +15,15 @@ const translations = {
         // Home Page
         home: {
             ai: "Inteligencia artificial",
+            eyebrow: "Portfolio de Hamza Laouzi",
+            headline: "Mi trabajo, antes que las palabras.",
+            intro: "Programador con experiencia en bases de datos SQL. Este es el proyecto con el que comparto mi trabajo en desarrollo web.",
+            featured: "Proyecto destacado / Aplicación web",
+            cta_case_study: "Ver detalles del proyecto",
+            cta_about: "Conocer mi trayectoria",
+            learning_label: "Aprendizaje",
+            contact_title: "¿Hablamos de desarrollo?",
+            contact_text: "Más sobre mi trabajo y mi formación.",
             learning_text: "Estoy aprendiendo Python y ClickHouse, y cursando Inteligencia Artificial Avanzada en AulaDigital de la Comunidad de Madrid.",
             learning_title: "Formación en curso",
             current_text: "Trabajo como programador con bases de datos SQL. Este es el punto de partida de mi evolución hacia el desarrollo y los datos.",
@@ -51,8 +60,10 @@ const translations = {
         // Projects Page
         projects: {
             polaris_source: "Ver repositorio",
+            overview_title: "Sobre el proyecto",
+            details_title: "Qué incluye",
             polaris_demo: "Abrir aplicación (acceso restringido)",
-            polaris_access: "Acceso restringido: la aplicación requiere una cuenta con invitación. El enlace abre la pantalla de acceso, no una demo pública.",
+            polaris_access: "Acceso restringido: la aplicación requiere una cuenta por invitación. No es una demo pública.",
             polaris_campaigns: "Campañas: seguimiento de las acciones de marketing.",
             polaris_channels: "Canales: análisis del rendimiento por canal.",
             polaris_kpis: "KPIs: visión general de los indicadores de marketing.",
@@ -82,8 +93,7 @@ const translations = {
         // Footer
         footer: {
             rights: 'Todos los derechos reservados',
-            made_with: 'Hecho con',
-            by: 'por'
+            email: 'Email'
         }
     },
 
@@ -98,6 +108,15 @@ const translations = {
         // Home Page
         home: {
             ai: "Artificial intelligence",
+            eyebrow: "Hamza Laouzi’s portfolio",
+            headline: "My work, before the words.",
+            intro: "A programmer with experience working with SQL databases. This project is how I share my work in web development.",
+            featured: "Featured project / Web application",
+            cta_case_study: "View project details",
+            cta_about: "Explore my background",
+            learning_label: "Learning",
+            contact_title: "Let’s talk development.",
+            contact_text: "More about my work and ongoing learning.",
             learning_text: "I am learning Python and ClickHouse, and taking the Advanced Artificial Intelligence course at AulaDigital, Community of Madrid.",
             learning_title: "Ongoing learning",
             current_text: "I work as a programmer with SQL databases. This is the starting point of my development and data journey.",
@@ -134,8 +153,10 @@ const translations = {
         // Projects Page
         projects: {
             polaris_source: "View repository",
+            overview_title: "About the project",
+            details_title: "What it includes",
             polaris_demo: "Open application (restricted access)",
-            polaris_access: "Restricted access: the application requires an invited account. The link opens the sign-in screen, not a public demo.",
+            polaris_access: "Restricted access: the application requires an invited account. This is not a public demo.",
             polaris_campaigns: "Campaigns: tracking marketing activities.",
             polaris_channels: "Channels: performance analysis by channel.",
             polaris_kpis: "KPIs: an overview of marketing indicators.",
@@ -165,8 +186,7 @@ const translations = {
         // Footer
         footer: {
             rights: 'All rights reserved',
-            made_with: 'Made with',
-            by: 'by'
+            email: 'Email'
         }
     },
 
@@ -181,6 +201,15 @@ const translations = {
         // Home Page
         home: {
             ai: "Intelligence artificielle",
+            eyebrow: "Portfolio de Hamza Laouzi",
+            headline: "Mon travail, avant les mots.",
+            intro: "Programmeur avec une expérience des bases de données SQL. Ce projet présente mon travail en développement web.",
+            featured: "Projet à la une / Application web",
+            cta_case_study: "Voir les détails du projet",
+            cta_about: "Découvrir mon parcours",
+            learning_label: "Apprentissage",
+            contact_title: "Parlons développement.",
+            contact_text: "En savoir plus sur mon travail et ma formation.",
             learning_text: "J’apprends Python et ClickHouse et je suis le cours d’intelligence artificielle avancée à AulaDigital de la Communauté de Madrid.",
             learning_title: "Formation en cours",
             current_text: "Je travaille comme programmeur avec des bases de données SQL. C’est le point de départ de mon évolution vers le développement et les données.",
@@ -217,8 +246,10 @@ const translations = {
         // Projects Page
         projects: {
             polaris_source: "Voir le dépôt",
+            overview_title: "À propos du projet",
+            details_title: "Ce qu’il propose",
             polaris_demo: "Ouvrir l’application (accès restreint)",
-            polaris_access: "Accès restreint : l’application nécessite un compte sur invitation. Le lien ouvre la page de connexion, pas une démonstration publique.",
+            polaris_access: "Accès restreint : l’application nécessite un compte sur invitation. Ce n’est pas une démonstration publique.",
             polaris_campaigns: "Campagnes : suivi des actions marketing.",
             polaris_channels: "Canaux : analyse des performances par canal.",
             polaris_kpis: "KPIs : vue d’ensemble des indicateurs marketing.",
@@ -248,8 +279,7 @@ const translations = {
         // Footer
         footer: {
             rights: 'Tous droits réservés',
-            made_with: 'Fait avec',
-            by: 'par'
+            email: 'Email'
         }
     },
 
@@ -264,6 +294,15 @@ const translations = {
         // Home Page
         home: {
             ai: "الذكاء الاصطناعي",
+            eyebrow: "ملف أعمال حمزة اللوزي",
+            headline: "عملي أولاً، ثم الكلمات.",
+            intro: "مبرمج لديه خبرة في العمل مع قواعد بيانات SQL. أشارك من خلال هذا المشروع عملي في تطوير الويب.",
+            featured: "مشروع مميز / تطبيق ويب",
+            cta_case_study: "عرض تفاصيل المشروع",
+            cta_about: "تعرف على مسيرتي",
+            learning_label: "التعلم",
+            contact_title: "لنتحدث عن البرمجة.",
+            contact_text: "المزيد عن عملي وتعلمي المستمر.",
             learning_text: "أتعلم Python وClickHouse وأتابع دورة الذكاء الاصطناعي المتقدم في AulaDigital التابعة لمنطقة مدريد.",
             learning_title: "تعلم مستمر",
             current_text: "أعمل مبرمجاً مع قواعد بيانات SQL. هذه نقطة البداية لتطوري في مجال البرمجة والبيانات.",
@@ -300,8 +339,10 @@ const translations = {
         // Projects Page
         projects: {
             polaris_source: "عرض المستودع",
+            overview_title: "عن المشروع",
+            details_title: "ما الذي يتضمنه",
             polaris_demo: "فتح التطبيق (وصول مقيد)",
-            polaris_access: "الوصول مقيد: يتطلب التطبيق حساباً بدعوة. يفتح الرابط صفحة تسجيل الدخول، وليس عرضاً تجريبياً عاماً.",
+            polaris_access: "الوصول مقيد: يتطلب التطبيق حساباً بدعوة. هذا ليس عرضاً تجريبياً عاماً.",
             polaris_campaigns: "الحملات: متابعة الأنشطة التسويقية.",
             polaris_channels: "القنوات: تحليل الأداء حسب القناة.",
             polaris_kpis: "مؤشرات الأداء: نظرة عامة على مؤشرات التسويق.",
@@ -331,8 +372,7 @@ const translations = {
         // Footer
         footer: {
             rights: 'جميع الحقوق محفوظة',
-            made_with: 'صنع بـ',
-            by: 'بواسطة'
+            email: 'البريد الإلكتروني'
         }
     }
 };

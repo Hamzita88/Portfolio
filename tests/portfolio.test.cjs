@@ -10,6 +10,59 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const html = (file) => read(file).replace(/<!--[\s\S]*?-->/g, '');
 const translations = require('../translations/translations.js');
 
+test('contact mobile layout shrinks and wraps content without clipping or hover shifts', () => {
+    const mobile = html('contact.html').match(/@media \(max-width: 768px\) \{([\s\S]*?)<\/style>/)[1];
+    assert.match(mobile, /\.contact-grid\s*\{\s*grid-template-columns: minmax\(0, 1fr\);/);
+    assert.match(mobile, /\.contact-grid > div,\s*\.contact-details\s*\{\s*min-width: 0;/);
+    assert.match(mobile, /\.contact-details\s*\{\s*overflow-wrap: anywhere;/);
+    assert.match(mobile, /\.contact-method:hover\s*\{\s*transform: none;/);
+    assert.doesNotMatch(mobile, /overflow(?:-x)?:\s*(?:hidden|clip)/);
+});
+
+test('home features the real Polaris project before profile and learning', () => {
+    const page = html('index.html');
+    const project = page.indexOf('id="featured-project"');
+    const profile = page.indexOf('id="profile"');
+    assert.ok(project >= 0 && profile > project, 'project must precede supporting profile');
+    const featured = page.slice(project, profile);
+    assert.match(featured, /Polaris Insights/);
+    assert.match(featured, /data-i18n="projects\.polaris_access"/);
+    assert.match(featured, /href="https:\/\/github\.com\/Hamzita88\/Polaris"/);
+    assert.match(featured, /href="projects\.html"/);
+    assert.doesNotMatch(featured, /polaris-dashboard\.png|<canvas|<svg/);
+});
+
+test('all page footers are discreet and contain real contact links without attribution', () => {
+    const footers = ['index.html', 'about.html', 'projects.html', 'contact.html', 'success.html']
+        .map(file => [file, html(file).match(/<footer class="footer">([\s\S]*?)<\/footer>/)[1]]);
+    for (const [, footer] of footers) {
+        assert.match(footer, /© 2026 Hamza Laouzi/);
+        assert.doesNotMatch(footer, /footer\.(?:made_with|by)|Hecho con|❤️/);
+    }
+    for (const [file, footer] of footers) {
+        for (const url of ['https://github.com/Hamzita88', 'https://linkedin.com/in/hamza-laouzi', 'mailto:hamzita88@gmail.com']) {
+            assert.ok(footer.includes(`href="${url}"`), `${file}: ${url}`);
+        }
+    }
+    for (const language of Object.values(translations)) {
+        assert.equal(language.footer.made_with, undefined);
+        assert.equal(language.footer.by, undefined);
+    }
+});
+
+test('every rendered translation key resolves in each supported language', () => {
+    for (const file of ['index.html', 'about.html', 'projects.html', 'contact.html', 'success.html']) {
+        const keys = [...html(file).matchAll(/data-i18n(?:-placeholder|-aria)?="([^"]+)"/g)].map(match => match[1]);
+        for (const key of keys) {
+            for (const language of Object.keys(translations)) {
+                const value = key.split('.').reduce((item, part) => item?.[part], translations[language]);
+                assert.equal(typeof value, 'string', `${file} ${language}: ${key}`);
+                assert.ok(value.trim(), `${file} ${language}: ${key}`);
+            }
+        }
+    }
+});
+
 test('home distinguishes current SQL work from ongoing learning', () => {
     const page = html('index.html');
     for (const key of ['current_title', 'current_text', 'learning_title', 'learning_text']) {

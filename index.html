@@ -34,11 +34,8 @@
 
     <title>Hamza Laouzi - Programación y Datos | Portfolio</title>
 
-    <!-- DevIcon for Technology Logos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
     <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css?v=173bc6d9e15e">
+    <link rel="stylesheet" href="css/styles.css?v=75677e758f7c">
 </head>
 
 <body>
@@ -96,204 +93,81 @@
         </div>
     </nav>
 
-    <!-- Main Container -->
+    <!-- Project-first homepage -->
     <main class="container">
-        <!-- Hero Section -->
-        <section class="hero hero-redesigned">
-            <div class="hero-profile">
-                <img src="assets/images/Gemini_Generated_Image_xjc7nsxjc7nsxjc7.png"
-                    alt="Hamza Laouzi - Programador" class="profile-image">
+        <section class="portfolio-intro">
+            <div>
+                <p class="section-label" data-i18n="home.eyebrow">Portfolio de Hamza Laouzi</p>
+                <h1 data-i18n="home.headline">Mi trabajo, antes que las palabras.</h1>
             </div>
+            <p class="text-secondary" data-i18n="home.intro">Programador con experiencia en bases de datos SQL. Este es el proyecto con el que comparto mi trabajo en desarrollo web.</p>
+        </section>
 
-            <div class="hero-content">
-                <h1 class="hero-title" data-i18n="home.title">Hamza Laouzi</h1>
-                <p class="hero-subtitle" data-i18n="home.subtitle">Programación y datos</p>
-                <p class="text-secondary hero-description" data-i18n="home.description">
-                    Soy programador y trabajo con bases de datos SQL. Estoy ampliando mis conocimientos en Python, ClickHouse e inteligencia artificial para seguir creciendo profesionalmente.
-                </p>
-
-                <div class="hero-cta">
-                    <a href="projects.html" class="btn btn-primary" data-i18n="home.cta_projects">Ver Proyectos</a>
-                    <a href="contact.html" class="btn btn-secondary" data-i18n="home.cta_contact">Contactar</a>
+        <section class="featured-project" id="featured-project" aria-labelledby="featured-title">
+            <div class="project-preview">
+                <p class="section-label" data-i18n="home.featured">Proyecto destacado / Aplicación web</p>
+                <strong>Polaris Insights.</strong>
+                <p data-i18n="projects.polaris_preview">Dashboard de marketing</p>
+                <span class="project-cover-stack">Next.js · React · Supabase</span>
+            </div>
+            <div class="project-overview">
+                <p class="section-label" data-i18n="projects.overview_title">Sobre el proyecto</p>
+                <h2 id="featured-title">Polaris Insights</h2>
+                <p class="text-secondary" data-i18n="projects.polaris_description">Dashboard de marketing que reúne indicadores, canales y campañas para explorar el rendimiento desde una misma interfaz.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Next.js 16</span>
+                    <span class="project-tag">React 19</span>
+                    <span class="project-tag">Supabase</span>
+                    <span class="project-tag">Tailwind CSS</span>
+                </div>
+                <p class="project-access text-secondary" data-i18n="projects.polaris_access">Acceso restringido: la aplicación requiere una cuenta por invitación. No es una demo pública.</p>
+                <div class="project-actions">
+                    <a href="projects.html" class="btn btn-primary" data-i18n="home.cta_case_study">Ver detalles del proyecto</a>
+                    <a href="https://github.com/Hamzita88/Polaris" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="projects.polaris_source">Ver repositorio</a>
                 </div>
             </div>
         </section>
 
-        <!-- Current work and ongoing learning -->
-        <section class="scroll-animate">
-            <div class="bento-grid">
-                <div class="card">
-                    <h2 class="card-title" data-i18n="home.current_title">Mi trabajo actual</h2>
-                    <p class="text-secondary" data-i18n="home.current_text">Trabajo como programador con bases de datos SQL. Este es el punto de partida de mi evolución hacia el desarrollo y los datos.</p>
-                    <div class="tech-stack"><span class="tech-badge">SQL</span></div>
-                </div>
-                <div class="card">
-                    <h2 class="card-title" data-i18n="home.learning_title">Formación en curso</h2>
-                    <p class="text-secondary" data-i18n="home.learning_text">Estoy aprendiendo Python y ClickHouse, y cursando Inteligencia Artificial Avanzada en AulaDigital de la Comunidad de Madrid.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">ClickHouse</span>
-                        <span class="tech-badge" data-i18n="home.ai">Inteligencia artificial</span>
-                    </div>
+        <section class="profile-grid" id="profile" aria-labelledby="profile-title">
+            <div>
+                <p class="section-label" data-i18n="home.subtitle">Programación y datos</p>
+                <h2 id="profile-title" data-i18n="home.current_title">Mi trabajo actual</h2>
+                <p class="text-secondary" data-i18n="home.current_text">Trabajo como programador con bases de datos SQL. Este es el punto de partida de mi evolución hacia el desarrollo y los datos.</p>
+                <a href="about.html" class="text-link" data-i18n="home.cta_about">Conocer mi trayectoria</a>
+            </div>
+            <div>
+                <p class="section-label" data-i18n="home.learning_label">Aprendizaje</p>
+                <h2 data-i18n="home.learning_title">Formación en curso</h2>
+                <p class="text-secondary" data-i18n="home.learning_text">Estoy aprendiendo Python y ClickHouse, y cursando Inteligencia Artificial Avanzada en AulaDigital de la Comunidad de Madrid.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">ClickHouse</span>
+                    <span class="project-tag" data-i18n="home.ai">Inteligencia artificial</span>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section - Bento Grid -->
-        <section class="scroll-animate">
-            <h2 class="text-center" data-i18n="home.skills_title">Otras tecnologías de mi recorrido</h2>
-
-            <div class="bento-grid">
-                <!-- Frontend Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title" data-i18n="home.frontend">Frontend</h3>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-badge">
-                            <i class="devicon-html5-plain colored"></i>
-                            HTML5
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-css3-plain colored"></i>
-                            CSS3
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-javascript-plain colored"></i>
-                            JavaScript ES6+
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-angular-plain colored"></i>
-                            Angular
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-react-original colored"></i>
-                            React Native
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Backend Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title" data-i18n="home.backend">Backend</h3>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-badge">
-                            <i class="devicon-java-plain colored"></i>
-                            Java
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-spring-original colored"></i>
-                            SpringBoot
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-php-plain colored"></i>
-                            PHP
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Database Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title" data-i18n="home.database">Bases de Datos</h3>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-badge">
-                            <i class="devicon-mysql-plain colored"></i>
-                            MySQL
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-mongodb-plain colored"></i>
-                            MongoDB
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-firebase-plain colored"></i>
-                            Firebase
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-firebase-plain colored"></i>
-                            Firestore
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Tools Card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title" data-i18n="home.tools">Herramientas</h3>
-                    </div>
-                    <div class="tech-stack">
-                        <span class="tech-badge">
-                            <i class="devicon-git-plain colored"></i>
-                            Git
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-docker-plain colored"></i>
-                            Docker
-                        </span>
-                        <span class="tech-badge">
-                            <i class="devicon-firebase-plain colored"></i>
-                            Cloud Messaging
-                        </span>
-                    </div>
-                </div>
+        <section class="home-contact" aria-labelledby="home-contact-title">
+            <div>
+                <h2 id="home-contact-title" data-i18n="home.contact_title">¿Hablamos de desarrollo?</h2>
+                <p class="text-secondary" data-i18n="home.contact_text">Más sobre mi trabajo y mi formación.</p>
             </div>
-        </section>
-
-        <!-- Soft Skills Section -->
-        <section class="scroll-animate mt-4">
-            <h2 class="text-center" data-i18n="home.soft_skills_title">Habilidades Transferibles</h2>
-
-            <div class="bento-grid grid-3">
-                <div class="card">
-                    <h4>💬 <span data-i18n="home.soft_skills.0">Comunicación efectiva</span></h4>
-                    <p class="text-secondary">Experiencia en presentaciones y negociaciones B2B</p>
-                </div>
-
-                <div class="card">
-                    <h4>🤝 <span data-i18n="home.soft_skills.1">Negociación</span></h4>
-                    <p class="text-secondary">Habilidad para encontrar soluciones win-win</p>
-                </div>
-
-                <div class="card">
-                    <h4>🎯 <span data-i18n="home.soft_skills.2">Orientación a resultados</span></h4>
-                    <p class="text-secondary">Enfoque en objetivos y cumplimiento de metas</p>
-                </div>
-
-                <div class="card">
-                    <h4>❤️ <span data-i18n="home.soft_skills.3">Empatía con el cliente</span></h4>
-                    <p class="text-secondary">Comprensión profunda de las necesidades del usuario</p>
-                </div>
-
-                <div class="card">
-                    <h4>⚖️ <span data-i18n="home.soft_skills.4">Resolución de conflictos</span></h4>
-                    <p class="text-secondary">Capacidad para mediar y resolver problemas</p>
-                </div>
-            </div>
+            <a href="contact.html" class="btn btn-secondary" data-i18n="home.cta_contact">Contactar</a>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
+        <p class="text-secondary">© 2026 Hamza Laouzi</p>
         <div class="social-links">
-            <a href="mailto:hamzita88@gmail.com" class="social-link">
-                📧 <span data-i18n="contact.email_me">Email</span>
-            </a>
-            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer"
-                class="social-link">
-                💼 <span data-i18n="contact.linkedin">LinkedIn</span>
-            </a>
+            <a href="https://github.com/Hamzita88" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+            <a href="https://linkedin.com/in/hamza-laouzi" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+            <a href="mailto:hamzita88@gmail.com" class="social-link" data-i18n="footer.email">Email</a>
         </div>
-
-        <p class="text-secondary">
-            © 2026 Hamza Laouzi. <span data-i18n="footer.rights">Todos los derechos reservados</span>.
-        </p>
     </footer>
 
     <!-- Scripts -->
-    <script src="translations/translations.js?v=3eb5e25e9a0d"></script>
+    <script src="translations/translations.js?v=f71a52462845"></script>
     <script src="js/theme-toggle.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/animations.js"></script>
