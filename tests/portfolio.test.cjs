@@ -10,6 +10,73 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const html = (file) => read(file).replace(/<!--[\s\S]*?-->/g, '');
 const translations = require('../translations/translations.js');
 
+test('Polaris case study frames individual AI-assisted learning and links pinned evidence', () => {
+    const study = html('projects.html').match(/<section[^>]+id="polaris-case"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+    assert.ok(study, 'Polaris learning case study is visible below the project');
+    for (const key of ['label', 'title', 'goal_title', 'goal', 'contribution_title', 'contribution',
+        'workflow_title', 'workflow', 'behavior_title', 'behavior', 'spec_link', 'test_link']) {
+        assert.ok(study.includes(`data-i18n="projects.case_${key}"`), key);
+    }
+    const revision = 'https://github.com/Hamzita88/Polaris/blob/8d8388bce21bc29bc589892db828cba397ce82b9/';
+    for (const proof of [
+        'openspec/changes/archive/2026-06-02-crm-pipeline-evolution/specs/pipeline-kanban/spec.md#L16-L43',
+        'src/domain/use-cases/__tests__/move-lead-stage.test.ts#L18-L35'
+    ]) assert.ok(study.includes(`href="${revision}${proof}" target="_blank" rel="noopener noreferrer"`));
+    const copy = translations.es.projects;
+    assert.match(copy.case_goal, /IA.*Next\.js.*framework de React/);
+    assert.match(copy.case_contribution, /individual.*asistencia de IA/);
+    assert.match(copy.case_workflow, /SDD.*TDD.*Gentleman Programming/);
+    assert.ok(copy.case_behavior.startsWith('Las pruebas cubren'));
+    assert.match(copy.case_behavior, /cambio de etapa de un lead.*generación de su actividad/);
+    assert.match(copy.case_behavior, /misma etapa no cambie el lead ni genere actividad/);
+    assert.doesNotMatch(study, /certificad[oa]|100\s*%|sin asistencia|list[oa] para producci[oó]n/i);
+});
+
+test('career profile describes confirmed SQL duties and separates environment from responsibilities', () => {
+    const home = html('index.html');
+    const about = html('about.html');
+    assert.match(home, /data-i18n="home\.current_environment"/);
+    assert.match(about, /id="current-experience"/);
+    for (const key of ['experience_text', 'reporting', 'maintenance', 'environment_text', 'skills_context']) {
+        assert.ok(about.includes(`data-i18n="about.${key}"`), key);
+    }
+    assert.equal(translations.es.about.reporting, 'Elaboración de reportes con SQL');
+    assert.equal(translations.es.about.maintenance, 'Tareas de mantenimiento de bases de datos');
+    assert.match(translations.es.home.current_text, /reportes con SQL.*mantenimiento/);
+    assert.match(translations.es.about.environment_text, /entorno.*CRM Octopus y Asterisk/);
+    assert.doesNotMatch(about, /Actualmente, como estudiante de DAW|Desarrollador Web \| Ex-Comercial|Full Stack/);
+    assert.ok(home.includes('href="assets/cv/CV_Hamza_Laouzi.pdf" download'));
+    const cv = fs.openSync(path.join(root, 'assets/cv/CV_Hamza_Laouzi.pdf'), 'r');
+    const header = Buffer.alloc(5);
+    try { assert.equal(fs.readSync(cv, header, 0, 5, 0), 5); }
+    finally { fs.closeSync(cv); }
+    assert.equal(header.toString(), '%PDF-');
+});
+
+test('recruiter-facing copy is translated with Spanish fallbacks and keeps the contact form contract', () => {
+    const changedKeys = new Set(['home.current_text', 'home.current_environment', 'about.subtitle',
+        'about.experience_label', 'about.experience_title', 'about.experience_text', 'about.reporting',
+        'about.maintenance', 'about.environment_title', 'about.environment_text', 'about.skills_title',
+        'about.skills_context', 'about.story_title', 'about.background_text', 'about.story_transfer',
+        'about.story_learning', 'contact.title', 'contact.subtitle', 'contact.availability']);
+    for (const file of ['index.html', 'about.html', 'contact.html']) {
+        for (const [, , key, fallback] of html(file).matchAll(/<([a-z][\w-]*)\b[^>]*data-i18n="([^"]+)"[^>]*>([^<]*)<\/\1>/g)) {
+            if (!changedKeys.has(key)) continue;
+            for (const lang of ['es', 'en', 'fr', 'ar']) {
+                const value = key.split('.').reduce((item, part) => item?.[part], translations[lang]);
+                assert.equal(typeof value, 'string', `${lang}: ${key}`);
+                assert.ok(value.trim(), `${lang}: ${key}`);
+                if (lang === 'es') assert.equal(fallback.trim(), value, key);
+            }
+        }
+    }
+    const contact = html('contact.html');
+    assert.match(contact, /data-i18n="contact\.availability"/);
+    assert.doesNotMatch(contact, /freelance|prácticas profesionales|Full Stack/);
+    assert.match(contact, /<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"\s+action="\/success\.html">/);
+    for (const field of ['name', 'email', 'message']) assert.match(contact, new RegExp(`name="${field}"[^>]*required`));
+});
+
 test('contact mobile layout shrinks and wraps content without clipping or hover shifts', () => {
     const mobile = html('contact.html').match(/@media \(max-width: 768px\) \{([\s\S]*?)<\/style>/)[1];
     assert.match(mobile, /\.contact-grid\s*\{\s*grid-template-columns: minmax\(0, 1fr\);/);
